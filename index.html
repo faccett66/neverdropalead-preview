@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<!-- Public brand: Never Drop A Lead (not CATCH). -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Never Drop A Lead — bulletproof intake, instant auto-reply, and 24/7 health watchdogs for revenue & booking businesses." />
+  <title>Never Drop A Lead · neverdropalead.com</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0a0b0a;
+      --bg-elev: #121412;
+      --bg-card: #161916;
+      --line: #2a2e2a;
+      --line-bright: #3d443d;
+      --ink: #e8ebe4;
+      --ink-dim: #9aa394;
+      --ink-mute: #6b7268;
+      --signal: #c8f542;
+      --signal-dim: rgba(200, 245, 66, 0.14);
+      --signal-glow: rgba(200, 245, 66, 0.35);
+      --danger: #ff6b4a;
+      --danger-dim: rgba(255, 107, 74, 0.12);
+      --radius: 14px;
+      --max: 1120px;
+      --font-display: "Syne", system-ui, sans-serif;
+      --font-body: "IBM Plex Sans", system-ui, sans-serif;
+      --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.55;
+      font-size: 17px;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      background:
+        radial-gradient(ellipse 80% 50% at 50% -20%, rgba(200, 245, 66, 0.06), transparent 55%),
+        radial-gradient(ellipse 40% 30% at 90% 60%, rgba(255, 107, 74, 0.04), transparent 50%);
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .wrap {
+      width: min(100% - 2rem, var(--max));
+      margin-inline: auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── NAV ── */
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1.25rem 0;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: clamp(0.95rem, 2.5vw, 1.2rem);
+      letter-spacing: -0.03em;
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+    }
+
+    .logo-mark {
+      width: 1.5rem;
+      height: 1.5rem;
+      border-radius: 50%;
+      background: var(--signal);
+      box-shadow: 0 0 0 3px var(--signal-dim), 0 0 18px var(--signal-glow);
+      position: relative;
+      animation: pulse-ring 2.4s ease-out infinite;
+      flex-shrink: 0;
+    }
+
+    .logo-mark::after {
+      content: "";
+      position: absolute;
+      inset: 4px;
+      border-radius: 50%;
+      background: var(--bg);
+    }
+
+    @keyframes pulse-ring {
+      0% { box-shadow: 0 0 0 0 var(--signal-glow), 0 0 0 3px var(--signal-dim); }
+      70% { box-shadow: 0 0 0 12px transparent, 0 0 0 3px var(--signal-dim); }
+      100% { box-shadow: 0 0 0 0 transparent, 0 0 0 3px var(--signal-dim); }
+    }
+
+    .nav-right {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      align-items: center;
+    }
+
+    .nav-domain {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.04em;
+      color: var(--ink-mute);
+      padding: 0.45rem 0.65rem;
+    }
+
+    .nav-domain span { color: var(--signal); }
+
+    .nav-cta {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 0.55rem 0.9rem;
+      border: 1px solid var(--line-bright);
+      border-radius: 999px;
+      color: var(--ink);
+      transition: border-color 0.2s, background 0.2s, color 0.2s;
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .nav-cta:hover {
+      border-color: var(--signal);
+      background: var(--signal-dim);
+      color: var(--signal);
+    }
+
+    /* ── HERO ── */
+    .hero {
+      padding: 3.5rem 0 4.5rem;
+      display: grid;
+      gap: 2.75rem;
+    }
+
+    @media (min-width: 900px) {
+      .hero {
+        grid-template-columns: 1.15fr 0.85fr;
+        align-items: center;
+        padding: 5rem 0 5.5rem;
+        gap: 3.5rem;
+      }
+    }
+
+    .eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--signal);
+      margin-bottom: 1.25rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 1.5rem;
+      height: 2px;
+      background: var(--signal);
+    }
+
+    h1 {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: clamp(2.6rem, 7vw, 4.5rem);
+      line-height: 0.95;
+      letter-spacing: -0.045em;
+      margin-bottom: 1.25rem;
+    }
+
+    h1 .dim { color: var(--ink-mute); font-weight: 600; }
+
+    .hero-lede {
+      font-size: 1.1rem;
+      color: var(--ink-dim);
+      max-width: 34rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: -0.01em;
+      padding: 0.9rem 1.35rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: transform 0.15s, background 0.2s, border-color 0.2s, box-shadow 0.2s;
+      min-height: 44px;
+      -webkit-tap-highlight-color: transparent;
+      text-decoration: none;
+    }
+
+    .btn:hover { transform: translateY(-1px); }
+
+    .btn:focus-visible,
+    .nav-cta:focus-visible,
+    .foot-mail:focus-visible,
+    .logo:focus-visible {
+      outline: 2px solid var(--signal);
+      outline-offset: 3px;
+    }
+
+    @media (max-width: 520px) {
+      .hero-actions .btn,
+      .cta-actions .btn { width: 100%; }
+    }
+
+    .btn-primary {
+      background: var(--signal);
+      color: #0a0b0a;
+      box-shadow: 0 0 28px var(--signal-glow);
+    }
+
+    .btn-primary:hover { box-shadow: 0 0 40px var(--signal-glow); }
+
+    .btn-ghost {
+      background: transparent;
+      border-color: var(--line-bright);
+      color: var(--ink);
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--ink-dim);
+      background: var(--bg-elev);
+    }
+
+    .hero-meta {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--ink-mute);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    /* Live panel */
+    .live-panel {
+      background: var(--bg-card);
+      border: 1px solid var(--line);
+      border-radius: calc(var(--radius) + 4px);
+      overflow: hidden;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.45);
+    }
+
+    .live-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.85rem 1.1rem;
+      border-bottom: 1px solid var(--line);
+      background: var(--bg-elev);
+    }
+
+    .live-title {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+    }
+
+    .live-status {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      color: var(--signal);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .dot-live {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--signal);
+      box-shadow: 0 0 8px var(--signal);
+      animation: blink 1.6s ease-in-out infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.35; }
+    }
+
+    .live-body { padding: 0.35rem 0; }
+
+    .check-row {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 0.75rem;
+      align-items: center;
+      padding: 0.85rem 1.1rem;
+      border-bottom: 1px solid var(--line);
+      font-size: 0.9rem;
+    }
+
+    .check-row:last-child { border-bottom: none; }
+
+    .check-icon {
+      width: 1.65rem;
+      height: 1.65rem;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 0.7rem;
+      font-weight: 700;
+    }
+
+    .check-ok { background: var(--signal-dim); color: var(--signal); }
+    .check-fail { background: var(--danger-dim); color: var(--danger); }
+
+    .check-label { color: var(--ink); font-weight: 500; }
+    .check-sub {
+      display: block;
+      font-size: 0.75rem;
+      color: var(--ink-mute);
+      margin-top: 0.15rem;
+      font-family: var(--font-mono);
+    }
+
+    .check-time {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      color: var(--ink-mute);
+    }
+
+    /* ── SECTIONS ── */
+    section { padding: 4rem 0; }
+
+    .section-label {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+      margin-bottom: 0.85rem;
+    }
+
+    h2 {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: clamp(1.85rem, 4vw, 2.65rem);
+      letter-spacing: -0.035em;
+      line-height: 1.05;
+      margin-bottom: 1rem;
+    }
+
+    .section-lede {
+      color: var(--ink-dim);
+      max-width: 38rem;
+      margin-bottom: 2.25rem;
+      font-size: 1.05rem;
+    }
+
+    /* Problem */
+    .problem {
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,107,74,0.03), transparent 40%);
+    }
+
+    .death-grid {
+      display: grid;
+      gap: 0.85rem;
+    }
+
+    @media (min-width: 700px) {
+      .death-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    .death-card {
+      background: var(--bg-card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 1.35rem 1.4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .death-card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--danger);
+      opacity: 0.7;
+    }
+
+    .death-code {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--danger);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 0.55rem;
+    }
+
+    .death-card h3 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.15rem;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.45rem;
+    }
+
+    .death-card p {
+      color: var(--ink-dim);
+      font-size: 0.92rem;
+    }
+
+    /* Spine */
+    .spine-grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    @media (min-width: 800px) {
+      .spine-grid { grid-template-columns: repeat(5, 1fr); gap: 0.75rem; }
+    }
+
+    .spine-card {
+      background: var(--bg-card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 1.4rem 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .spine-card:hover {
+      border-color: var(--signal);
+      transform: translateY(-2px);
+    }
+
+    .spine-num {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      color: var(--signal);
+      letter-spacing: 0.08em;
+    }
+
+    .spine-card h3 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.05rem;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+
+    .spine-card p {
+      color: var(--ink-dim);
+      font-size: 0.86rem;
+      flex: 1;
+    }
+
+    .not-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .not-pill {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 0.45rem 0.75rem;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      color: var(--ink-mute);
+      background: var(--bg);
+    }
+
+    /* Scars */
+    .scars {
+      background: var(--bg-elev);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .scar-block {
+      display: grid;
+      gap: 2rem;
+    }
+
+    @media (min-width: 800px) {
+      .scar-block {
+        grid-template-columns: 1fr 1.2fr;
+        align-items: start;
+        gap: 3.5rem;
+      }
+    }
+
+    .scar-quote {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(1.35rem, 3vw, 1.85rem);
+      letter-spacing: -0.03em;
+      line-height: 1.25;
+      color: var(--ink);
+    }
+
+    .scar-quote span { color: var(--signal); }
+
+    .scar-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .scar-list li {
+      padding-left: 1.25rem;
+      border-left: 2px solid var(--signal);
+      color: var(--ink-dim);
+      font-size: 0.95rem;
+    }
+
+    .scar-list strong {
+      color: var(--ink);
+      font-weight: 600;
+      display: block;
+      margin-bottom: 0.2rem;
+      font-family: var(--font-display);
+      letter-spacing: -0.01em;
+    }
+
+    /* Who */
+    .who-grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    @media (min-width: 700px) {
+      .who-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    .who-card {
+      border-radius: var(--radius);
+      padding: 1.75rem 1.5rem;
+      border: 1px solid var(--line);
+    }
+
+    .who-yes {
+      background: var(--signal-dim);
+      border-color: rgba(200, 245, 66, 0.25);
+    }
+
+    .who-no { background: var(--bg-card); }
+
+    .who-card h3 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.2rem;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .who-yes h3 { color: var(--signal); }
+    .who-no h3 { color: var(--ink-mute); }
+
+    .who-card ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+    }
+
+    .who-card li {
+      font-size: 0.95rem;
+      color: var(--ink-dim);
+      padding-left: 1.1rem;
+      position: relative;
+    }
+
+    .who-yes li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: var(--signal);
+      font-weight: 600;
+    }
+
+    .who-no li::before {
+      content: "×";
+      position: absolute;
+      left: 0;
+      color: var(--ink-mute);
+    }
+
+    /* Path */
+    .path-steps {
+      display: grid;
+      gap: 1rem;
+      counter-reset: step;
+    }
+
+    @media (min-width: 800px) {
+      .path-steps { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    .path-step {
+      counter-increment: step;
+      padding: 1.75rem 1.4rem;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--bg-card);
+    }
+
+    .path-step::before {
+      content: "0" counter(step);
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      color: var(--signal);
+      display: block;
+      margin-bottom: 0.85rem;
+    }
+
+    .path-step h3 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.2rem;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.45rem;
+    }
+
+    .path-step p {
+      color: var(--ink-dim);
+      font-size: 0.92rem;
+    }
+
+    /* Pricing */
+    .pricing-grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    @media (min-width: 800px) {
+      .pricing-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    .price-card {
+      background: var(--bg-card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 1.6rem 1.4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+      position: relative;
+    }
+
+    .price-card.sweet {
+      border-color: rgba(200, 245, 66, 0.35);
+      box-shadow: 0 0 0 1px rgba(200, 245, 66, 0.12), 0 16px 40px rgba(0,0,0,0.35);
+      background:
+        linear-gradient(180deg, rgba(200, 245, 66, 0.06), transparent 40%),
+        var(--bg-card);
+    }
+
+    .price-badge {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--signal);
+      background: var(--signal-dim);
+      padding: 0.3rem 0.55rem;
+      border-radius: 999px;
+    }
+
+    .price-tier {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+    }
+
+    .price-card h3 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.25rem;
+      letter-spacing: -0.02em;
+    }
+
+    .price-amount {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1.65rem;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin: 0.25rem 0;
+    }
+
+    .price-amount .unit {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--ink-mute);
+    }
+
+    .price-range {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--ink-mute);
+      letter-spacing: 0.02em;
+    }
+
+    .price-card p {
+      color: var(--ink-dim);
+      font-size: 0.9rem;
+      flex: 1;
+    }
+
+    .price-default {
+      margin-top: 1.75rem;
+      padding: 1.15rem 1.35rem;
+      border: 1px solid rgba(200, 245, 66, 0.28);
+      border-radius: var(--radius);
+      background: var(--signal-dim);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1.5rem;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .price-default strong {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .price-default span {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: var(--ink-dim);
+      letter-spacing: 0.03em;
+    }
+
+    /* CTA */
+    .cta { padding: 4.5rem 0 3.5rem; }
+
+    .cta-box {
+      background:
+        linear-gradient(135deg, rgba(200, 245, 66, 0.1), transparent 50%),
+        var(--bg-card);
+      border: 1px solid rgba(200, 245, 66, 0.3);
+      border-radius: calc(var(--radius) + 6px);
+      padding: clamp(2rem, 5vw, 3.25rem);
+      text-align: center;
+      box-shadow: 0 0 60px rgba(200, 245, 66, 0.08);
+    }
+
+    .cta-box h2 { margin-bottom: 0.75rem; }
+
+    .cta-box .section-lede {
+      margin-inline: auto;
+      margin-bottom: 1.75rem;
+      text-align: center;
+    }
+
+    .cta-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: center;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 2rem 0 3rem;
+    }
+
+    .foot-inner {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .foot-brand {
+      font-family: var(--font-display);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+
+    .foot-copy {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--ink-mute);
+      letter-spacing: 0.04em;
+      margin-top: 0.25rem;
+    }
+
+    .foot-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1.25rem;
+      align-items: center;
+    }
+
+    .foot-mail {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--signal);
+    }
+
+    .foot-mail:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+    .foot-domain {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--ink-mute);
+      letter-spacing: 0.03em;
+    }
+
+    .foot-domain span { color: var(--ink-dim); }
+  </style>
+</head>
+<body id="top">
+
+  <div class="wrap">
+    <nav class="nav" aria-label="Primary">
+      <a href="#top" class="logo" aria-label="Never Drop A Lead home">
+        <span class="logo-mark" aria-hidden="true"></span>
+        Never Drop A Lead
+      </a>
+      <div class="nav-right">
+        <span class="nav-domain" aria-label="Website">neverdropalead<span>.com</span></span>
+        <a class="nav-cta" href="#pricing">Pricing</a>
+        <a class="nav-cta" href="mailto:faccett66@gmail.com?subject=Never%20Drop%20A%20Lead%20audit">Book an audit</a>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <div>
+        <p class="eyebrow">Lead-ops · reliability layer</p>
+        <h1>Never drop<br />a lead<span class="dim">.</span></h1>
+        <p class="hero-lede">
+          Most revenue &amp; booking businesses lose leads to broken forms, silent inboxes, overnight gaps, and 404s — and never know. Never Drop A Lead installs bulletproof intake, instant professional auto-reply, and a 24/7 health watchdog.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="mailto:faccett66@gmail.com?subject=Never%20Drop%20A%20Lead%20audit&body=Hi%2C%0A%0AI%20want%20a%20Never%20Drop%20A%20Lead%20audit%20for%20my%20business.%0A%0ABusiness%3A%0AWebsite%3A%0AHow%20leads%20come%20in%20today%3A%0A">
+            Book an audit
+          </a>
+          <a class="btn btn-ghost" href="#spine">See the product spine</a>
+        </div>
+        <p class="hero-meta">Quote after audit · trust + taste · no inventory</p>
+      </div>
+
+      <aside class="live-panel" aria-label="Example Never Drop A Lead health panel">
+        <div class="live-head">
+          <span class="live-title">Watchdog · last sweep</span>
+          <span class="live-status"><span class="dot-live" aria-hidden="true"></span> Armed</span>
+        </div>
+        <div class="live-body">
+          <div class="check-row">
+            <span class="check-icon check-ok" aria-hidden="true">✓</span>
+            <div>
+              <span class="check-label">Form POST intake</span>
+              <span class="check-sub">200 · payload accepted</span>
+            </div>
+            <span class="check-time">2m</span>
+          </div>
+          <div class="check-row">
+            <span class="check-icon check-ok" aria-hidden="true">✓</span>
+            <div>
+              <span class="check-label">Auto-ack reply</span>
+              <span class="check-sub">sent · &lt; 60s</span>
+            </div>
+            <span class="check-time">2m</span>
+          </div>
+          <div class="check-row">
+            <span class="check-icon check-fail" aria-hidden="true">!</span>
+            <div>
+              <span class="check-label">Booking landing</span>
+              <span class="check-sub">404 · alert fired</span>
+            </div>
+            <span class="check-time">now</span>
+          </div>
+          <div class="check-row">
+            <span class="check-icon check-ok" aria-hidden="true">✓</span>
+            <div>
+              <span class="check-label">Inbox delivery path</span>
+              <span class="check-sub">reachable · not stuck</span>
+            </div>
+            <span class="check-time">4h</span>
+          </div>
+        </div>
+      </aside>
+    </header>
+  </div>
+
+  <section class="problem" id="problem">
+    <div class="wrap">
+      <p class="section-label">The problem</p>
+      <h2>Invisible lead death.</h2>
+      <p class="section-lede">
+        Your site looks fine. Your brand looks fine. Meanwhile leads vanish into method errors, quiet nights, and pages that quietly 404 — and nobody tells you until the week’s bookings feel thin.
+      </p>
+      <div class="death-grid">
+        <article class="death-card">
+          <p class="death-code">405 · method not allowed</p>
+          <h3>Form that “looks fine”</h3>
+          <p>Button works. Spinner spins. Lead never lands. The visitor assumes you got it. You didn’t.</p>
+        </article>
+        <article class="death-card">
+          <p class="death-code">Overnight · silent inbox</p>
+          <h3>No auto-ack after hours</h3>
+          <p>They inquire at 11pm. Radio silence until morning. By then they booked the competitor who replied at midnight.</p>
+        </article>
+        <article class="death-card">
+          <p class="death-code">404 · dead landing</p>
+          <h3>Campaign URL goes dark</h3>
+          <p>Ads, QR codes, and Instagram bios still point somewhere that doesn’t exist. You find out from a friend — or never.</p>
+        </article>
+        <article class="death-card">
+          <p class="death-code">Stuck · delivery path</p>
+          <h3>Inbox that stops receiving</h3>
+          <p>Filters, full mailboxes, auth flips — intake “works” upstream while your actual inbox goes quiet. Leads pile up nowhere.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="spine">
+    <div class="wrap">
+      <p class="section-label">Product spine</p>
+      <h2>Five layers. Zero excuses.</h2>
+      <p class="section-lede">
+        Not a CRM. Not a chatbot. Not another agency site mill. A reliability stack that makes sure every lead is caught, acknowledged, and watched — around the clock.
+       We plug into the inbox you already use — any email client.</p>
+      <div class="spine-grid">
+        <article class="spine-card">
+          <span class="spine-num">01</span>
+          <h3>Intake that works</h3>
+          <p>Forms that actually POST, validate, and land where you need them — every time, not just on demo day.</p>
+        </article>
+        <article class="spine-card">
+          <span class="spine-num">02</span>
+          <h3>Instant professional auto-reply</h3>
+          <p>A sharp, on-brand acknowledgment in seconds — day or night — so the lead knows you caught them.</p>
+        </article>
+        <article class="spine-card">
+          <span class="spine-num">03</span>
+          <h3>24/7 watchers</h3>
+          <p>Scheduled health sweeps that probe the real paths your leads take — not vanity uptime badges.</p>
+        </article>
+        <article class="spine-card">
+          <span class="spine-num">04</span>
+          <h3>Critical URL &amp; form health</h3>
+          <p>Booking pages, contact endpoints, key landings — checked for status, method, and stuck delivery.</p>
+        </article>
+        <article class="spine-card">
+          <span class="spine-num">05</span>
+          <h3>Alerts when it breaks</h3>
+          <p>You hear about the 404 or failed POST before your customers do. Fix it while the window is still open.</p>
+        </article>
+      </div>
+      <div class="not-bar" aria-label="What Never Drop A Lead is not">
+        <span class="not-pill">Not a CRM</span>
+        <span class="not-pill">Not a chatbot</span>
+        <span class="not-pill">Not an agency mill</span>
+        <span class="not-pill">Ops reliability · period</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="scars" id="proof">
+    <div class="wrap">
+      <div class="scar-block">
+        <div>
+          <p class="section-label">Built from battle scars</p>
+          <p class="scar-quote">
+            Never Drop A Lead wasn’t brainstormed in a deck. It was <span>lived</span> — fixing the exact failure modes that quietly kill bookings.
+          </p>
+        </div>
+        <ul class="scar-list">
+          <li>
+            <strong>Intake that survives the real world</strong>
+            Form wiring, third-party submission paths, and confirmation flows hardened until they stop lying to you.
+          </li>
+          <li>
+            <strong>Always-on acknowledgment</strong>
+            Professional auto-ack that doesn’t sleep when your team does — so overnight inquiries don’t evaporate.
+          </li>
+          <li>
+            <strong>Health that checks what matters</strong>
+            Periodic probes on form POST, inbox delivery paths, and critical pages — with alerts when something breaks, not after the month’s numbers look soft.
+          </li>
+          <li>
+            <strong>Taste + trust, not inventory</strong>
+            We ship the install. You get calm confidence for operators who can’t afford invisible lead loss.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="who">
+    <div class="wrap">
+      <p class="section-label">Fit</p>
+      <h2>Who it’s for. Who it’s not.</h2>
+      <p class="section-lede">
+        Built for revenue &amp; booking businesses where a missed lead is a missed deposit — not for teams shopping for another dashboard to ignore.
+      </p>
+      <div class="who-grid">
+        <article class="who-card who-yes">
+          <h3>✓ Built for</h3>
+          <ul>
+            <li>Med spas &amp; aesthetic practices</li>
+            <li>Contractors &amp; home-service operators</li>
+            <li>Wedding vendors &amp; event pros</li>
+            <li>Dayclubs, nightlife, hospitality</li>
+            <li>Boutique gyms &amp; prestige local services</li>
+            <li>Anyone whose site is the front door to revenue</li>
+          </ul>
+        </article>
+        <article class="who-card who-no">
+          <h3>× Not for</h3>
+          <ul>
+            <li>Teams hunting another full CRM</li>
+            <li>Chatbot-first “AI receptionist” projects</li>
+            <li>Agencies that need a site-mill product</li>
+            <li>Businesses with zero inbound digital leads</li>
+            <li>“Maybe later” tire-kickers with no booking urgency</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="path">
+    <div class="wrap">
+      <p class="section-label">How it works</p>
+      <h2>Audit → install → monthly watch.</h2>
+      <p class="section-lede">
+        Start with a clear picture of what’s failing. Then harden the front door and keep watching it — so calm compounds month after month.
+      </p>
+      <div class="path-steps">
+        <article class="path-step">
+          <h3>Audit</h3>
+          <p>We probe your forms, key URLs, auto-reply gaps, and overnight coverage. You see what’s quietly failing — in plain language.</p>
+        </article>
+        <article class="path-step">
+          <h3>Install</h3>
+          <p>Hardened intake + professional auto-ack + watchdog coverage. Tuned to your brand voice, not a template dump.</p>
+        </article>
+        <article class="path-step">
+          <h3>Monthly watch</h3>
+          <p>Ongoing health sweeps and alerts when something breaks. You run the business; Never Drop A Lead watches the front door.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing">
+    <div class="wrap">
+      <p class="section-label">Pricing</p>
+      <h2>Clear numbers. Quote after audit.</h2>
+      <p class="section-lede">
+        Scope follows the stack. Warm intros get the audit free; cold outreach is paid so everyone stays serious.
+      </p>
+      <div class="pricing-grid">
+        <article class="price-card">
+          <p class="price-tier">01 · Start</p>
+          <h3>Audit</h3>
+          <p class="price-amount">Free <span class="unit">warm</span></p>
+          <p class="price-range">$197–$397 cold</p>
+          <p>Form POST probe, auto-ack gaps, overnight coverage, critical URLs, inbox delivery path — plain-language risk report.</p>
+        </article>
+        <article class="price-card sweet">
+          <span class="price-badge">Sweet spot</span>
+          <p class="price-tier">02 · Build</p>
+          <h3>Install</h3>
+          <p class="price-amount">$1,497</p>
+          <p class="price-range">Range $997–$2,497 one-time</p>
+          <p>Hardened intake, on-brand auto-ack, watchdog wired, alert path live. Tuned for single-site operators at the sweet spot.</p>
+        </article>
+        <article class="price-card sweet">
+          <span class="price-badge">Sweet spot</span>
+          <p class="price-tier">03 · Keep</p>
+          <h3>Monthly watch</h3>
+          <p class="price-amount">$197 <span class="unit">/ mo</span></p>
+          <p class="price-range">Range $147–$297 / mo</p>
+          <p>Scheduled health sweeps on form POST + critical URLs, stuck-delivery checks, alerts when the front door dies.</p>
+        </article>
+      </div>
+      <div class="price-default">
+        <strong>Default quote: $1,497 + $197/mo</strong>
+        <span>Audit free if warm · quote after findings</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta" id="audit">
+    <div class="wrap">
+      <div class="cta-box">
+        <p class="section-label" style="color: var(--signal);">Next move</p>
+        <h2>Stop losing leads you never see.</h2>
+        <p class="section-lede">
+          Book an audit. Our team will review your intake paths and tell you exactly what’s at risk — then what it takes to lock it down.
+        </p>
+        <div class="cta-actions">
+          <a class="btn btn-primary" href="mailto:faccett66@gmail.com?subject=Never%20Drop%20A%20Lead%20audit&body=Hi%2C%0A%0AI%20want%20a%20Never%20Drop%20A%20Lead%20audit%20for%20my%20business.%0A%0ABusiness%3A%0AWebsite%3A%0AHow%20leads%20come%20in%20today%3A%0A">
+            Email faccett66@gmail.com
+          </a>
+          <a class="btn btn-ghost" href="#pricing">See pricing</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap foot-inner">
+      <div>
+        <div class="foot-brand">Never Drop A Lead</div>
+        <p class="foot-copy">neverdropalead.com</p>
+      </div>
+      <div class="foot-links">
+        <span class="foot-domain">neverdropalead<span>.com</span></span>
+        <a class="foot-mail" href="mailto:faccett66@gmail.com?subject=Never%20Drop%20A%20Lead%20audit">faccett66@gmail.com</a>
+        <a class="foot-mail" href="#pricing">Pricing</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
