@@ -9,7 +9,9 @@
   <link rel="icon" href="assets/brand/favicon.ico" sizes="any" />
   <link rel="icon" type="image/png" href="assets/brand/favicon-32.png" sizes="32x32" />
   <link rel="apple-touch-icon" href="assets/brand/logo-mark-192.png" />
-  <meta property="og:image" content="assets/brand/ndal-logo-lockup.png" />
+  <meta property="og:title" content="Never Drop A Lead" />
+  <meta property="og:description" content="Free audit · limited time. Audit → Install → Watch for revenue & booking businesses." />
+  <meta property="og:image" content="assets/brand/logo-mark-512.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -282,7 +284,7 @@
       padding: 0.55rem 0.75rem;
       border: 1px solid var(--signal);
       border-radius: 999px;
-      background: rgba(194, 255, 0, 0.08);
+      background: var(--signal-dim);
       color: var(--ink-dim);
       font-family: var(--font-mono);
       font-size: 0.7rem;
@@ -294,7 +296,7 @@
     .offer-chip strong { color: var(--signal); }
 
     .offer-chip:hover {
-      background: rgba(194, 255, 0, 0.14);
+      background: rgba(200, 245, 66, 0.2);
       color: var(--ink);
     }
 
@@ -902,6 +904,169 @@
       justify-content: center;
     }
 
+
+    /* Sticky free-audit bar */
+    .sticky-audit {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 50;
+      padding: 0.65rem 1rem calc(0.65rem + env(safe-area-inset-bottom, 0px));
+      background: rgba(10, 11, 10, 0.92);
+      border-top: 1px solid rgba(200, 245, 66, 0.35);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 -12px 40px rgba(0,0,0,0.45);
+      transform: translateY(110%);
+      transition: transform 0.28s ease;
+    }
+
+    .sticky-audit.is-visible { transform: translateY(0); }
+
+    .sticky-inner {
+      width: min(100%, var(--max));
+      margin-inline: auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem 1rem;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .sticky-copy {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--ink-dim);
+    }
+
+    .sticky-copy strong { color: var(--signal); }
+
+    .sticky-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      align-items: center;
+    }
+
+    .sticky-audit .btn {
+      padding: 0.65rem 1.1rem;
+      font-size: 0.85rem;
+      min-height: 42px;
+    }
+
+    body.has-sticky { padding-bottom: 5.5rem; }
+
+    /* Primary-styled nav CTA for free audit */
+    .nav-cta.nav-cta-primary {
+      background: var(--signal);
+      border-color: var(--signal);
+      color: #0a0b0a;
+      box-shadow: 0 0 18px var(--signal-glow);
+    }
+
+    .nav-cta.nav-cta-primary:hover {
+      background: #d6ff63;
+      border-color: #d6ff63;
+      color: #0a0b0a;
+    }
+
+    .nav-link {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+      padding: 0.45rem 0.55rem;
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      transition: color 0.2s;
+    }
+
+    .nav-link:hover { color: var(--ink); }
+
+    .preview-pill {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 0.3rem 0.55rem;
+    }
+
+    .price-cta {
+      margin-top: 0.35rem;
+      align-self: flex-start;
+    }
+
+    .path-cta-wrap {
+      margin-top: 1.75rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
+    .path-step.highlight {
+      border-color: rgba(200, 245, 66, 0.35);
+      box-shadow: 0 0 0 1px rgba(200, 245, 66, 0.1);
+      background:
+        linear-gradient(180deg, rgba(200, 245, 66, 0.06), transparent 45%),
+        var(--bg-card);
+    }
+
+    .path-step .path-free {
+      display: inline-block;
+      margin-top: 0.85rem;
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--signal);
+    }
+
+    .offer-chip {
+      background: var(--signal-dim);
+    }
+
+    .offer-chip:hover {
+      background: rgba(200, 245, 66, 0.2);
+    }
+
+
+    @media (max-width: 720px) {
+      .nav-link, .preview-pill { display: none; }
+      .nav-domain { display: none; }
+    }
+
+    @media (max-width: 420px) {
+      .sticky-copy { font-size: 0.65rem; max-width: 12rem; }
+    }
+
+    .foot-brand-row {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+    }
+
+    .foot-brand-row .logo-mark {
+      width: 2rem;
+      height: 2rem;
+      border-radius: 8px;
+    }
+
+    .foot-brand-name {
+      font-family: var(--font-display);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      font-size: 1rem;
+    }
+
     /* Footer */
     footer {
       border-top: 1px solid var(--line);
@@ -964,9 +1129,10 @@
         <span class="logo-text">Never Drop A <span class="lead-uline">Lead</span></span>
       </a>
       <div class="nav-right">
-        <span class="nav-domain" aria-label="Website">neverdropalead<span>.com</span></span>
-        <a class="nav-cta" href="#pricing">Pricing</a>
-        <a class="nav-cta" href="mailto:faccett66@gmail.com?subject=Never%20Drop%20A%20Lead%20audit">Free audit · limited time</a>
+        <span class="preview-pill" title="GitHub Pages soft storefront">Preview</span>
+        <a class="nav-link" href="#path">How it works</a>
+        <a class="nav-link" href="#pricing">Pricing</a>
+        <a class="nav-cta nav-cta-primary" href="mailto:faccett66@gmail.com?subject=Never%20Drop%20A%20Lead%20%E2%80%94%20Free%20audit&body=Hi%20Frank%2C%0A%0AI%27d%20like%20a%20free%20Never%20Drop%20A%20Lead%20audit.%0A%0ABusiness%20name%3A%0AWebsite%3A%0AHow%20leads%20come%20in%20today%3A%0ABest%20time%20to%20reach%20me%3A%0A">Free audit · limited time</a>
       </div>
     </nav>
 
@@ -978,15 +1144,15 @@
           Most revenue &amp; booking businesses lose leads to broken forms, silent inboxes, overnight gaps, and 404s — and never know. Never Drop A Lead installs bulletproof intake, instant professional auto-reply, and a 24/7 health watchdog.
         </p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="mailto:faccett66@gmail.com?subject=Never%20Drop%20A%20Lead%20audit&body=Hi%2C%0A%0AI%20want%20a%20Never%20Drop%20A%20Lead%20audit%20for%20my%20business.%0A%0ABusiness%3A%0AWebsite%3A%0AHow%20leads%20come%20in%20today%3A%0A">
+          <a class="btn btn-primary" href="mailto:faccett66@gmail.com?subject=Never%20Drop%20A%20Lead%20%E2%80%94%20Free%20audit&body=Hi%20Frank%2C%0A%0AI%27d%20like%20a%20free%20Never%20Drop%20A%20Lead%20audit.%0A%0ABusiness%20name%3A%0AWebsite%3A%0AHow%20leads%20come%20in%20today%3A%0ABest%20time%20to%20reach%20me%3A%0A">
             Book a free audit · limited time
           </a>
-          <a class="btn btn-ghost" href="#spine">See the product spine</a>
+          <a class="btn btn-ghost" href="#path">How it works</a>
         </div>
-        <a class="offer-chip" href="#pricing" aria-label="Free audit offer, limited time">
-          <strong>Free offer · Audit</strong><span>Limited time</span>
+        <a class="offer-chip" href="mailto:faccett66@gmail.com?subject=Never%20Drop%20A%20Lead%20%E2%80%94%20Free%20audit&body=Hi%20Frank%2C%0A%0AI%27d%20like%20a%20free%20Never%20Drop%20A%20Lead%20audit.%0A%0ABusiness%20name%3A%0AWebsite%3A%0AHow%20leads%20come%20in%20today%3A%0ABest%20time%20to%20reach%20me%3A%0A" aria-label="Book a free audit, limited time">
+          <strong>Free audit</strong><span>· Limited time · mostly my time, not your cash</span>
         </a>
-        <p class="hero-meta">Free audit for a limited time · quote after findings · trust + taste</p>
+        <p class="hero-meta">Audit → Install → Watch · quote after findings · professional excellence</p>
       </div>
 
       <aside class="live-panel" aria-label="Example Never Drop A Lead health panel">
@@ -1070,7 +1236,7 @@
       <h2>Five layers. Zero excuses.</h2>
       <p class="section-lede">
         Not a CRM. Not a chatbot. Not another agency site mill. A reliability stack that makes sure every lead is caught, acknowledged, and watched — around the clock.
-       We plug into the inbox you already use — any email client.</p>
+       Plugs into the inbox you already use — any email client.</p>
       <div class="spine-grid">
         <article class="spine-card">
           <span class="spine-num">01</span>
@@ -1131,7 +1297,7 @@
           </li>
           <li>
             <strong>Taste + trust, not inventory</strong>
-            We ship the install. You get calm confidence for operators who can’t afford invisible lead loss.
+            The install ships with care. You get calm confidence — built for operators who can’t afford invisible lead loss.
           </li>
         </ul>
       </div>
@@ -1179,18 +1345,23 @@
         Start with a clear picture of what’s failing. Then harden the front door and keep watching it — so calm compounds month after month.
       </p>
       <div class="path-steps">
-        <article class="path-step">
+        <article class="path-step highlight">
           <h3>Audit</h3>
-          <p>We probe your forms, key URLs, auto-reply gaps, and overnight coverage. You see what’s quietly failing — in plain language.</p>
+          <p>I probe your forms, key URLs, auto-reply gaps, and overnight coverage. You see what’s quietly failing — in plain language.</p>
+          <span class="path-free">Free · limited time</span>
         </article>
         <article class="path-step">
           <h3>Install</h3>
           <p>Hardened intake + professional auto-ack + watchdog coverage. Tuned to your brand voice, not a template dump.</p>
         </article>
         <article class="path-step">
-          <h3>Monthly watch</h3>
+          <h3>Watch</h3>
           <p>Ongoing health sweeps and alerts when something breaks. You run the business; Never Drop A Lead watches the front door.</p>
         </article>
+      </div>
+      <div class="path-cta-wrap">
+        <a class="btn btn-primary" href="mailto:faccett66@gmail.com?subject=Never%20Drop%20A%20Lead%20%E2%80%94%20Free%20audit&body=Hi%20Frank%2C%0A%0AI%27d%20like%20a%20free%20Never%20Drop%20A%20Lead%20audit.%0A%0ABusiness%20name%3A%0AWebsite%3A%0AHow%20leads%20come%20in%20today%3A%0ABest%20time%20to%20reach%20me%3A%0A">Book a free audit · limited time</a>
+        <a class="btn btn-ghost" href="#pricing">See pricing</a>
       </div>
     </div>
   </section>
@@ -1200,36 +1371,39 @@
       <p class="section-label">Pricing</p>
       <h2>Clear numbers. Quote after audit.</h2>
       <p class="section-lede">
-        Scope follows the stack. Audit is free for a limited time — then we quote install + monthly watch from what we find.
+        Scope follows the stack. Audit is free for a limited time — then install + monthly watch are quoted from what we find.
       </p>
       <div class="pricing-grid">
-        <article class="price-card">
+        <article class="price-card sweet">
+          <span class="price-badge">Limited time</span>
           <p class="price-tier">01 · Start</p>
           <h3>Audit</h3>
-          <p class="price-amount">Free <span class="unit">for a limited time</span></p>
+          <p class="price-amount">Free</p>
           <p class="price-range">Plain-language risk report · no obligation</p>
-          <p>Form POST probe, auto-ack gaps, overnight coverage, critical URLs, inbox delivery path — plain-language risk report.</p>
+          <p>Form POST probe, auto-ack gaps, overnight coverage, critical URLs, inbox delivery path. The cost is mostly my time — not your cash.</p>
+          <a class="btn btn-primary price-cta" href="mailto:faccett66@gmail.com?subject=Never%20Drop%20A%20Lead%20%E2%80%94%20Free%20audit&body=Hi%20Frank%2C%0A%0AI%27d%20like%20a%20free%20Never%20Drop%20A%20Lead%20audit.%0A%0ABusiness%20name%3A%0AWebsite%3A%0AHow%20leads%20come%20in%20today%3A%0ABest%20time%20to%20reach%20me%3A%0A">Book free audit</a>
         </article>
-        <article class="price-card sweet">
-          <span class="price-badge">Sweet spot</span>
+        <article class="price-card">
           <p class="price-tier">02 · Build</p>
           <h3>Install</h3>
           <p class="price-amount">$1,497</p>
           <p class="price-range">Range $997–$2,497 one-time</p>
           <p>Hardened intake, on-brand auto-ack, watchdog wired, alert path live. Tuned for single-site operators at the sweet spot.</p>
+          <a class="btn btn-ghost price-cta" href="mailto:faccett66@gmail.com?subject=Never%20Drop%20A%20Lead%20%E2%80%94%20Free%20audit&body=Hi%20Frank%2C%0A%0AI%27d%20like%20a%20free%20Never%20Drop%20A%20Lead%20audit.%0A%0ABusiness%20name%3A%0AWebsite%3A%0AHow%20leads%20come%20in%20today%3A%0ABest%20time%20to%20reach%20me%3A%0A">Start with free audit</a>
         </article>
-        <article class="price-card sweet">
-          <span class="price-badge">Sweet spot</span>
+        <article class="price-card">
           <p class="price-tier">03 · Keep</p>
           <h3>Monthly watch</h3>
           <p class="price-amount">$197 <span class="unit">/ mo</span></p>
           <p class="price-range">Range $147–$297 / mo</p>
           <p>Scheduled health sweeps on form POST + critical URLs, stuck-delivery checks, alerts when the front door dies.</p>
+          <a class="btn btn-ghost price-cta" href="mailto:faccett66@gmail.com?subject=Never%20Drop%20A%20Lead%20%E2%80%94%20Free%20audit&body=Hi%20Frank%2C%0A%0AI%27d%20like%20a%20free%20Never%20Drop%20A%20Lead%20audit.%0A%0ABusiness%20name%3A%0AWebsite%3A%0AHow%20leads%20come%20in%20today%3A%0ABest%20time%20to%20reach%20me%3A%0A">Start with free audit</a>
         </article>
       </div>
       <div class="price-default">
         <strong>Default quote: $1,497 + $197/mo</strong>
-        <span>Audit free for a limited time · quote after findings</span>
+        <span>Free audit · limited time · quote after findings</span>
+        <a class="btn btn-primary" href="mailto:faccett66@gmail.com?subject=Never%20Drop%20A%20Lead%20%E2%80%94%20Free%20audit&body=Hi%20Frank%2C%0A%0AI%27d%20like%20a%20free%20Never%20Drop%20A%20Lead%20audit.%0A%0ABusiness%20name%3A%0AWebsite%3A%0AHow%20leads%20come%20in%20today%3A%0ABest%20time%20to%20reach%20me%3A%0A" style="margin-left:auto">Book free audit</a>
       </div>
     </div>
   </section>
@@ -1237,17 +1411,18 @@
   <section class="cta" id="audit">
     <div class="wrap">
       <div class="cta-box">
-        <p class="section-label" style="color: var(--signal);">Next move</p>
+        <p class="section-label" style="color: var(--signal);">Next move · free audit · limited time</p>
         <h2>Stop losing leads you never see.</h2>
         <p class="section-lede">
-          Book a free audit for a limited time. Our team will review your intake paths and tell you exactly what’s at risk — then what it takes to lock it down.
+          Book a free audit while the offer is open. I’ll review your intake paths personally and tell you exactly what’s at risk — then what it takes to lock it down. The audit costs mostly my time, not your cash.
         </p>
         <div class="cta-actions">
-          <a class="btn btn-primary" href="mailto:faccett66@gmail.com?subject=Never%20Drop%20A%20Lead%20audit&body=Hi%2C%0A%0AI%20want%20a%20Never%20Drop%20A%20Lead%20audit%20for%20my%20business.%0A%0ABusiness%3A%0AWebsite%3A%0AHow%20leads%20come%20in%20today%3A%0A">
-            Email faccett66@gmail.com
+          <a class="btn btn-primary" href="mailto:faccett66@gmail.com?subject=Never%20Drop%20A%20Lead%20%E2%80%94%20Free%20audit&body=Hi%20Frank%2C%0A%0AI%27d%20like%20a%20free%20Never%20Drop%20A%20Lead%20audit.%0A%0ABusiness%20name%3A%0AWebsite%3A%0AHow%20leads%20come%20in%20today%3A%0ABest%20time%20to%20reach%20me%3A%0A">
+            Book a free audit · limited time
           </a>
           <a class="btn btn-ghost" href="#pricing">See pricing</a>
         </div>
+        <p class="hero-meta" style="margin-top:1.25rem">faccett66@gmail.com · professional excellence · Audit → Install → Watch</p>
       </div>
     </div>
   </section>
@@ -1255,16 +1430,50 @@
   <footer>
     <div class="wrap foot-inner">
       <div>
-        <img class="logo-lockup" src="assets/brand/ndal-logo-lockup.png" alt="Never Drop A Lead" height="38" />
-        <p class="foot-copy" style="margin-top:0.65rem">neverdropalead.com</p>
+        <div class="foot-brand-row">
+          <img class="logo-mark" src="assets/brand/logo-mark-192.png" width="32" height="32" alt="" />
+          <span class="foot-brand-name">Never Drop A <span class="lead-uline">Lead</span></span>
+        </div>
+        <p class="foot-copy" style="margin-top:0.65rem">neverdropalead.com · soft preview</p>
       </div>
       <div class="foot-links">
-        <span class="foot-domain">neverdropalead<span>.com</span></span>
-        <a class="foot-mail" href="mailto:faccett66@gmail.com?subject=Never%20Drop%20A%20Lead%20audit">faccett66@gmail.com</a>
+        <span class="foot-domain">Brand · neverdropalead<span>.com</span></span>
+        <a class="foot-mail" href="mailto:faccett66@gmail.com?subject=Never%20Drop%20A%20Lead%20%E2%80%94%20Free%20audit&body=Hi%20Frank%2C%0A%0AI%27d%20like%20a%20free%20Never%20Drop%20A%20Lead%20audit.%0A%0ABusiness%20name%3A%0AWebsite%3A%0AHow%20leads%20come%20in%20today%3A%0ABest%20time%20to%20reach%20me%3A%0A">Free audit</a>
+        <a class="foot-mail" href="mailto:faccett66@gmail.com">faccett66@gmail.com</a>
         <a class="foot-mail" href="#pricing">Pricing</a>
       </div>
     </div>
   </footer>
+
+
+  <div class="sticky-audit" id="sticky-audit" role="region" aria-label="Free audit offer">
+    <div class="sticky-inner">
+      <p class="sticky-copy"><strong>Free audit · limited time</strong> — Audit → Install → Watch</p>
+      <div class="sticky-actions">
+        <a class="btn btn-primary" href="mailto:faccett66@gmail.com?subject=Never%20Drop%20A%20Lead%20%E2%80%94%20Free%20audit&body=Hi%20Frank%2C%0A%0AI%27d%20like%20a%20free%20Never%20Drop%20A%20Lead%20audit.%0A%0ABusiness%20name%3A%0AWebsite%3A%0AHow%20leads%20come%20in%20today%3A%0ABest%20time%20to%20reach%20me%3A%0A">Book free audit</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var bar = document.getElementById('sticky-audit');
+      if (!bar) return;
+      document.body.classList.add('has-sticky');
+      var hero = document.querySelector('.hero');
+      function update() {
+        var show = true;
+        if (hero) {
+          var rect = hero.getBoundingClientRect();
+          show = rect.bottom < 80;
+        }
+        bar.classList.toggle('is-visible', show);
+      }
+      window.addEventListener('scroll', update, { passive: true });
+      window.addEventListener('resize', update);
+      update();
+    })();
+  </script>
 
 </body>
 </html>
