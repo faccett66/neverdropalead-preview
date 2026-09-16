@@ -6,6 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Never Drop A Lead — bulletproof intake, instant auto-reply, and 24/7 health watchdogs for revenue & booking businesses." />
   <title>Never Drop A Lead · neverdropalead.com</title>
+  <link rel="icon" href="assets/brand/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" href="assets/brand/favicon-32.png" sizes="32x32" />
+  <link rel="apple-touch-icon" href="assets/brand/logo-mark-192.png" />
+  <meta property="og:image" content="assets/brand/ndal-logo-lockup.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -86,28 +90,26 @@
     }
 
     .logo-mark {
-      width: 1.5rem;
-      height: 1.5rem;
-      border-radius: 50%;
-      background: var(--signal);
-      box-shadow: 0 0 0 3px var(--signal-dim), 0 0 18px var(--signal-glow);
-      position: relative;
-      animation: pulse-ring 2.4s ease-out infinite;
+      width: 2.15rem;
+      height: 2.15rem;
+      border-radius: 10px;
+      object-fit: cover;
       flex-shrink: 0;
+      box-shadow: 0 0 0 1px var(--line), 0 0 18px var(--signal-glow);
+      background: #0a0b0a;
     }
 
-    .logo-mark::after {
-      content: "";
-      position: absolute;
-      inset: 4px;
-      border-radius: 50%;
-      background: var(--bg);
+    .logo-lockup {
+      display: block;
+      height: 2.35rem;
+      width: auto;
+      max-width: min(280px, 52vw);
+      object-fit: contain;
     }
 
-    @keyframes pulse-ring {
-      0% { box-shadow: 0 0 0 0 var(--signal-glow), 0 0 0 3px var(--signal-dim); }
-      70% { box-shadow: 0 0 0 12px transparent, 0 0 0 3px var(--signal-dim); }
-      100% { box-shadow: 0 0 0 0 transparent, 0 0 0 3px var(--signal-dim); }
+    @media (max-width: 520px) {
+      .logo-lockup { height: 1.9rem; }
+      .logo-text { display: none; }
     }
 
     .nav-right {
@@ -876,8 +878,8 @@
   <div class="wrap">
     <nav class="nav" aria-label="Primary">
       <a href="#top" class="logo" aria-label="Never Drop A Lead home">
-        <span class="logo-mark" aria-hidden="true"></span>
-        Never Drop A Lead
+        <img class="logo-mark" src="assets/brand/logo-mark-192.png" width="34" height="34" alt="" />
+        <span class="logo-text">Never Drop A Lead</span>
       </a>
       <div class="nav-right">
         <span class="nav-domain" aria-label="Website">neverdropalead<span>.com</span></span>
@@ -1168,8 +1170,8 @@
   <footer>
     <div class="wrap foot-inner">
       <div>
-        <div class="foot-brand">Never Drop A Lead</div>
-        <p class="foot-copy">neverdropalead.com</p>
+        <img class="logo-lockup" src="assets/brand/ndal-logo-lockup.png" alt="Never Drop A Lead" height="38" />
+        <p class="foot-copy" style="margin-top:0.65rem">neverdropalead.com</p>
       </div>
       <div class="foot-links">
         <span class="foot-domain">neverdropalead<span>.com</span></span>
