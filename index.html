@@ -273,6 +273,36 @@
       text-transform: uppercase;
     }
 
+    .offer-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      width: fit-content;
+      margin: -0.35rem 0 0.9rem;
+      padding: 0.55rem 0.75rem;
+      border: 1px solid var(--signal);
+      border-radius: 999px;
+      background: rgba(194, 255, 0, 0.08);
+      color: var(--ink-dim);
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+
+    .offer-chip strong { color: var(--signal); }
+
+    .offer-chip:hover {
+      background: rgba(194, 255, 0, 0.14);
+      color: var(--ink);
+    }
+
+    .offer-chip:focus-visible {
+      outline: 2px solid var(--signal);
+      outline-offset: 3px;
+    }
+
 
     .lead-uline {
       position: relative;
@@ -936,7 +966,7 @@
       <div class="nav-right">
         <span class="nav-domain" aria-label="Website">neverdropalead<span>.com</span></span>
         <a class="nav-cta" href="#pricing">Pricing</a>
-        <a class="nav-cta" href="mailto:faccett66@gmail.com?subject=Never%20Drop%20A%20Lead%20audit">Book an audit</a>
+        <a class="nav-cta" href="mailto:faccett66@gmail.com?subject=Never%20Drop%20A%20Lead%20audit">Free audit · limited time</a>
       </div>
     </nav>
 
@@ -949,11 +979,14 @@
         </p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="mailto:faccett66@gmail.com?subject=Never%20Drop%20A%20Lead%20audit&body=Hi%2C%0A%0AI%20want%20a%20Never%20Drop%20A%20Lead%20audit%20for%20my%20business.%0A%0ABusiness%3A%0AWebsite%3A%0AHow%20leads%20come%20in%20today%3A%0A">
-            Book an audit
+            Book a free audit · limited time
           </a>
           <a class="btn btn-ghost" href="#spine">See the product spine</a>
         </div>
-        <p class="hero-meta">Quote after audit · trust + taste · no inventory</p>
+        <a class="offer-chip" href="#pricing" aria-label="Free audit offer, limited time">
+          <strong>Free offer · Audit</strong><span>Limited time</span>
+        </a>
+        <p class="hero-meta">Free audit for a limited time · quote after findings · trust + taste</p>
       </div>
 
       <aside class="live-panel" aria-label="Example Never Drop A Lead health panel">
@@ -1173,7 +1206,7 @@
         <article class="price-card">
           <p class="price-tier">01 · Start</p>
           <h3>Audit</h3>
-          <p class="price-amount">Free <span class="unit">for a limited time..</span></p>
+          <p class="price-amount">Free <span class="unit">for a limited time</span></p>
           <p class="price-range">Plain-language risk report · no obligation</p>
           <p>Form POST probe, auto-ack gaps, overnight coverage, critical URLs, inbox delivery path — plain-language risk report.</p>
         </article>
@@ -1207,7 +1240,7 @@
         <p class="section-label" style="color: var(--signal);">Next move</p>
         <h2>Stop losing leads you never see.</h2>
         <p class="section-lede">
-          Book an audit. Our team will review your intake paths and tell you exactly what’s at risk — then what it takes to lock it down.
+          Book a free audit for a limited time. Our team will review your intake paths and tell you exactly what’s at risk — then what it takes to lock it down.
         </p>
         <div class="cta-actions">
           <a class="btn btn-primary" href="mailto:faccett66@gmail.com?subject=Never%20Drop%20A%20Lead%20audit&body=Hi%2C%0A%0AI%20want%20a%20Never%20Drop%20A%20Lead%20audit%20for%20my%20business.%0A%0ABusiness%3A%0AWebsite%3A%0AHow%20leads%20come%20in%20today%3A%0A">
