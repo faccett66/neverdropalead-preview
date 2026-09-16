@@ -273,6 +273,58 @@
       text-transform: uppercase;
     }
 
+
+    .lead-uline {
+      position: relative;
+      display: inline;
+      white-space: nowrap;
+    }
+
+    .lead-uline::after {
+      content: "";
+      position: absolute;
+      left: 0.02em;
+      right: 0.35em;
+      bottom: 0.06em;
+      height: 0.12em;
+      min-height: 3px;
+      background: var(--signal);
+      border-radius: 999px;
+      box-shadow: 0 0 12px var(--signal-glow);
+      pointer-events: none;
+    }
+
+    .lead-uline::before {
+      content: "";
+      position: absolute;
+      right: 0.02em;
+      bottom: 0.02em;
+      width: 0.28em;
+      height: 0.28em;
+      min-width: 6px;
+      min-height: 6px;
+      border-radius: 50%;
+      background: var(--signal);
+      box-shadow: 0 0 10px var(--signal-glow);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .logo-text .lead-uline::after {
+      bottom: -0.08em;
+      right: 0.28em;
+      height: 2px;
+      min-height: 2px;
+    }
+
+    .logo-text .lead-uline::before {
+      bottom: -0.18em;
+      width: 5px;
+      height: 5px;
+      min-width: 5px;
+      min-height: 5px;
+    }
+
     /* Live panel */
     .live-panel {
       background: var(--bg-card);
@@ -879,7 +931,7 @@
     <nav class="nav" aria-label="Primary">
       <a href="#top" class="logo" aria-label="Never Drop A Lead home">
         <img class="logo-mark" src="assets/brand/logo-mark-192.png" width="34" height="34" alt="" />
-        <span class="logo-text">Never Drop A Lead</span>
+        <span class="logo-text">Never Drop A <span class="lead-uline">Lead</span></span>
       </a>
       <div class="nav-right">
         <span class="nav-domain" aria-label="Website">neverdropalead<span>.com</span></span>
@@ -891,7 +943,7 @@
     <header class="hero">
       <div>
         <p class="eyebrow">Lead-ops · reliability layer</p>
-        <h1>Never drop<br />a lead<span class="dim">.</span></h1>
+        <h1>Never drop<br />a <span class="lead-uline">lead</span><span class="dim">.</span></h1>
         <p class="hero-lede">
           Most revenue &amp; booking businesses lose leads to broken forms, silent inboxes, overnight gaps, and 404s — and never know. Never Drop A Lead installs bulletproof intake, instant professional auto-reply, and a 24/7 health watchdog.
         </p>
